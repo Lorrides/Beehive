@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace BeeHive
 {
-    class Worker
+    class Worker : Bee
     {
-        public Worker(string[] jobsICanDo)
-        {
+        public Worker(string[] jobsICanDo, int weigth)
+            :base(weigth){ 
             this.jobsICanDo = jobsICanDo;
         }
 
-        public int ShiftsLeft
+        public override int ShiftLeft
         {
             get { return shiftsToWork - shiftsWorked; }
         }

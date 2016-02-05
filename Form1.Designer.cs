@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.workerBeeJob = new System.Windows.Forms.ComboBox();
             this.assignJob = new System.Windows.Forms.Button();
             this.nextShift = new System.Windows.Forms.Button();
             this.report = new System.Windows.Forms.TextBox();
-            this.workerBeeJob = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.shifts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +80,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Worker Bee Assignments";
             // 
+            // workerBeeJob
+            // 
+            this.workerBeeJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.workerBeeJob.FormattingEnabled = true;
+            this.workerBeeJob.Items.AddRange(new object[] {
+            "Nectar collector",
+            "Egg care",
+            "Hive maintenance",
+            "Baby bee tutoring",
+            "Honey manufacturing",
+            "Sting patrol"});
+            this.workerBeeJob.Location = new System.Drawing.Point(9, 42);
+            this.workerBeeJob.Name = "workerBeeJob";
+            this.workerBeeJob.Size = new System.Drawing.Size(167, 21);
+            this.workerBeeJob.TabIndex = 1;
+            // 
             // assignJob
             // 
             this.assignJob.Location = new System.Drawing.Point(9, 70);
@@ -103,19 +119,11 @@
             // 
             // report
             // 
-            this.report.Location = new System.Drawing.Point(41, 156);
+            this.report.Location = new System.Drawing.Point(50, 154);
             this.report.Multiline = true;
             this.report.Name = "report";
             this.report.Size = new System.Drawing.Size(350, 187);
             this.report.TabIndex = 6;
-            // 
-            // workerBeeJob
-            // 
-            this.workerBeeJob.FormattingEnabled = true;
-            this.workerBeeJob.Location = new System.Drawing.Point(9, 44);
-            this.workerBeeJob.Name = "workerBeeJob";
-            this.workerBeeJob.Size = new System.Drawing.Size(121, 21);
-            this.workerBeeJob.TabIndex = 5;
             // 
             // Form1
             // 
@@ -126,7 +134,7 @@
             this.Controls.Add(this.nextShift);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "<";
             ((System.ComponentModel.ISupportInitialize)(this.shifts)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
