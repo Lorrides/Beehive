@@ -1,51 +1,46 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BeeHive
 {
-    internal class Worker
+    class Worker
     {
-
-
-
         public Worker(string[] jobsICanDo)
         {
-            this._jobsICanDo = jobsICanDo;
-
+            this.jobsICanDo = jobsICanDo;
         }
 
-        public int ShiftLeft
+        public int ShiftsLeft
         {
-            get { return shiftToWork - shiftWorked; }
+            get { return shiftsToWork - shiftsWorked; }
         }
 
         private string currentJob = "";
+
         public string CurrentJob
         {
-            get
-            {
-                return currentJob;
-            }
+            get { return currentJob; }
         }
 
-
-        private string[] _jobsICanDo;
-        private int shiftToWork;
-        private int shiftWorked;
+        private string[] jobsICanDo;
+        private int shiftsToWork;
+        private int shiftsWorked;
 
         public bool DoThisJob(string job, int numberOfShifts)
         {
             if (!String.IsNullOrEmpty(currentJob))
                 return false;
-            for (int i = 0; i < _jobsICanDo.Length; i++)
-            {
-                if (_jobsICanDo[i] == job)
+            for (int i = 0; i < jobsICanDo.Length; i++)
+                if (jobsICanDo[i] == job)
                 {
                     currentJob = job;
-                    this.shiftToWork = numberOfShifts;
-                    shiftWorked = 0;
+                    this.shiftsToWork = numberOfShifts;
+                    shiftsWorked = 0;
                     return true;
                 }
-            }
             return false;
         }
 
@@ -53,17 +48,17 @@ namespace BeeHive
         {
             if (String.IsNullOrEmpty(currentJob))
                 return false;
-            shiftWorked++;
-            if (shiftWorked > shiftToWork)
+            shiftsWorked++;
+            if (shiftsWorked > shiftsToWork)
             {
-                shiftWorked = 0;
-                shiftToWork = 0;
+                shiftsWorked = 0;
+                shiftsToWork = 0;
                 currentJob = "";
                 return true;
             }
             else
                 return false;
         }
-
     }
 }
+
